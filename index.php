@@ -106,9 +106,7 @@
                 <p><del>Cursos presenciales</del></p>
                 <p><del>Clases semanales</del></p>
               </div>
-              <form action="pagar.php" method="post">
-                <button name="btn" value="free">Suscribirse </button>
-              </form>
+              <button><a href="registerFree.php">Suscribirse</a></button>
             </div>
           <!-- END Col one -->
 

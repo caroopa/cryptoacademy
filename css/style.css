@@ -387,7 +387,8 @@ video {
   font-weight: bold;
 }
 
-.card a {
+.card button {
+  border: none;
   position: relative;
   background: #fff;
   color: black;

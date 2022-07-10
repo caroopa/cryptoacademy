@@ -1,3 +1,5 @@
+<?php include("config.php"); ?>
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -5,21 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav>
+  <nav>
       <img src="img/logo.png" alt="" class="logo1" />
-      <ul>
-        <li>Nosotros</li>
-        <li>Profesores</li>
-        <li>Servicios</li>
-        <button class="vivo">VIVO</button>
-        <button class="login">Log In</button>
+      <ul class="container-items">
+        <li class="item"><a>Nosotros</a></li>
+        <li class="item"><a>Profesores</a></li>
+        <li class="item"><a>Servicios</a></li>
+        <button class="vivo item"><a>VIVO</a></button>
+        <button class="login item"><a>Log In</a></button>
       </ul>
+      <div class="btn__container">
+        <i class="fa-solid fa-bars barra"></i>
+      </div>
     </nav>
 
     <header>
@@ -55,18 +60,24 @@
       <h1>Profesores</h1>
       <div class="container_profes">
         <div class="card_profe">
-          <img src="/img/logo.png" alt="" class="logo3">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eveniet facere laborum harum earum veritatis, similique corporis aperiam dolorum veniam laudantium exercitationem, quis officiis voluptatum explicabo libero id dolorem cupiditate?</p>
+          <img src="img/logo.png" alt="" class="logo3">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eveniet facere laborum 
+            harum earum veritatis, similique corporis aperiam dolorum veniam laudantium exercitationem, 
+            quis officiis voluptatum explicabo libero id dolorem cupiditate?</p>
           <p class="nombre">Juan Pérez</p>
         </div>
         <div class="card_profe">
-          <img src="/img/logo.png" alt="" class="logo3">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eveniet facere laborum harum earum veritatis, similique corporis aperiam dolorum veniam laudantium exercitationem, quis officiis voluptatum explicabo libero id dolorem cupiditate?</p>
+          <img src="img/logo.png" alt="" class="logo3">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eveniet facere laborum 
+            harum earum veritatis, similique corporis aperiam dolorum veniam laudantium exercitationem, 
+            quis officiis voluptatum explicabo libero id dolorem cupiditate?</p>
           <p class="nombre">Juan Pérez</p>
         </div>
         <div class="card_profe">
-          <img src="/img/logo.png" alt="" class="logo3">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eveniet facere laborum harum earum veritatis, similique corporis aperiam dolorum veniam laudantium exercitationem, quis officiis voluptatum explicabo libero id dolorem cupiditate?</p>
+          <img src="img/logo.png" alt="" class="logo3">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eveniet facere laborum harum 
+            earum veritatis, similique corporis aperiam dolorum veniam laudantium exercitationem, quis 
+            officiis voluptatum explicabo libero id dolorem cupiditate?</p>
           <p class="nombre">Juan Pérez</p>
         </div>
       </div>
@@ -95,7 +106,9 @@
                 <p><del>Cursos presenciales</del></p>
                 <p><del>Clases semanales</del></p>
               </div>
-              <a href="#">Suscribirse</a>
+              <form action="pagar.php" method="post">
+                <button name="btn" value="free">Suscribirse </button>
+              </form>
             </div>
           <!-- END Col one -->
 
@@ -119,7 +132,9 @@
                 <p><del>Cursos presenciales</del></p>
                 <p><del>Clases semanales</del></p>
               </div>
-              <a href="#">Suscribirse </a>
+              <form action="pagar.php" method="post">
+                <button name="btn" value="plata">Suscribirse</button>
+              </form>
             </div>
           <!-- END Col two -->
 
@@ -143,10 +158,22 @@
                 <p><i class="fa fa-check check"></i>Cursos presenciales</p>
                 <p><i class="fa fa-check check"></i>Clases semanales</p>
               </div>
-              <a href="#">Suscribirse</a>
+              <form action="pagar.php" method="post">
+                <button name="btn" value="oro">Suscribirse </button>
+              </form>
             </div
-          <!-- END Col three -->
         </div>
     </section>
+    <script>
+      const menu = document.querySelector('.btn__container');
+      const item = document.querySelectorAll('.item');
+      const container = document.querySelector(".container-items");
+
+      menu.addEventListener('click', () => {
+        container.classList.toggle("show");
+        // item.forEach((i) => i.classList.toggle('show'));
+      });
+    </script>
+
   </body>
 </html>

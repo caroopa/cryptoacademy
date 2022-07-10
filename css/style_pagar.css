@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+
+:root {
+  --color-primario: #001b2c;
+  --color-secundario: #bd9c55;
+  --color-terciario: #d9d8c7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+body {
+}
+
+h1 {
+}

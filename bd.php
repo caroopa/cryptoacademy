@@ -1,8 +1,8 @@
 <?php
 	$host = "localhost";
-	$bd = "crypto";
-	$user = "root";
-	$password = "";
+	$bd = "c2231349_crypto";
+	$user = "c2231349_crypto";
+	$password = "vuvi66duLI";
 
 	try {
 		$conexion = new PDO("mysql:host=$host;dbname=$bd",$user,$password);

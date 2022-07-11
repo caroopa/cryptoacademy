@@ -10,11 +10,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 400;
 }
 
 body {
+  background-image: url(../img/grafico.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Roboto";
 }
 
 h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container {
+  max-width: 1000px;
+  background-color: var(--color-terciario);
+  border-radius: 10px;
+  padding: 5rem;
 }

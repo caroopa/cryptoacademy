@@ -1,3 +1,6 @@
+<?php include("config.php"); ?>
+<?php include("bd.php"); ?>
+
 <?php
 	if(isset($_POST["registrar"])) {
 
@@ -12,26 +15,31 @@
 		$sqlMail -> execute();	
 		$existeMail = $sqlMail -> fetch(PDO::FETCH_LAZY);
 
-		if (!$existeNombre and !$existeMail) {
+		if (!$existeNombre and !$existeMail and isset($_SESSION["rol"])) {
 			$sentenciaSQL = $conexion -> prepare("INSERT INTO usuarios (nombre, mail, contra, rol) 
 			VALUES (:nombre, :mail, :contra, :rol);");
 			$sentenciaSQL -> bindParam(":nombre", $nombre);
 			$sentenciaSQL -> bindParam(":mail", $mail);
 			$sentenciaSQL -> bindParam(":contra", $_POST["contra"]);
-			$sentenciaSQL -> bindParam(":rol", "free");
+			$sentenciaSQL -> bindParam(":rol", $_SESSION["rol"]);
 			$sentenciaSQL -> execute();
+			session_destroy();
 			header("Location:suscripto.php");
 		}
 		else {
 			if($existeNombre) {
 				echo "<script>alert('El usuario ya existe.');</script>";
 			}
-			else {
+			else if($existeMail) {
 				echo "<script>alert('El mail ya existe.');</script>";
+			}
+			else {
+				echo "<script>alert('Rol incorrecto, no te podés suscribir.');</script>";
 			}
 		}
 	}
 ?>
+
 
 <html>
   <head>
@@ -47,7 +55,7 @@
   </head>
 		<div class="container">
 			<h1>Register</h1>
-			<h2>Bienvenido a la suscripción FREE</h2>
+			<h2>Bienvenido a la suscripción de <?php echo $_SESSION["rol"][0]; ?></h2>
 	
 			<form action="" method="post">
 				<input type="text" placeholder="Nombre" name="nombre">

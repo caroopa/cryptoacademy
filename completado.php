@@ -5,8 +5,7 @@
 	if(is_array($datos)) {
 		// $status = $datos["detalles"]["status"];
 		// echo $status;	
-		session_start();
-		$_SESSION["pagar"] = true; 
+		$pagar = true; 
 	}
 	else {
 		// header("Location:index.php");

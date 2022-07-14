@@ -1,11 +1,18 @@
 <?php include("config.php"); ?>
 <?php include("bd.php"); ?>
+<!-- <?php include("completado.php"); ?> -->
 
 <?php
-	if(isset($_POST["registrar"])) {
+	// session_start();
+	if(!isset($_SESSION["pagadoOro"])) {
+		echo "<script>window.location.href='index.php';</script>";
+		die();
+	}
 
+	if(isset($_POST["registrar"])) {
 		$nombre = $_POST["nombre"];
 		$mail = $_POST["mail"];
+		$contra = $_POST["contra"];
 
 		$sqlNombre = $conexion -> prepare("SELECT * from usuarios WHERE nombre='$nombre';");
 		$sqlNombre -> execute();	
@@ -15,26 +22,22 @@
 		$sqlMail -> execute();	
 		$existeMail = $sqlMail -> fetch(PDO::FETCH_LAZY);
 
-		if (!$existeNombre and !$existeMail and isset($_SESSION["rol"])) {
+		if (!$existeNombre and !$existeMail) {
 			$sentenciaSQL = $conexion -> prepare("INSERT INTO usuarios (nombre, mail, contra, rol) 
-			VALUES (:nombre, :mail, :contra, :rol);");
-			$sentenciaSQL -> bindParam(":nombre", $nombre);
-			$sentenciaSQL -> bindParam(":mail", $mail);
-			$sentenciaSQL -> bindParam(":contra", $_POST["contra"]);
-			$sentenciaSQL -> bindParam(":rol", $_SESSION["rol"]);
+			VALUES ('$nombre', '$mail', '$contra', 'oro');");
 			$sentenciaSQL -> execute();
+			session_unset();
 			session_destroy();
-			header("Location:suscripto.php");
+			echo "<script>window.location.href='suscripto.php'</script>";
+			die();
+			// header("Location:suscripto.php");
 		}
 		else {
 			if($existeNombre) {
 				echo "<script>alert('El usuario ya existe.');</script>";
 			}
-			else if($existeMail) {
-				echo "<script>alert('El mail ya existe.');</script>";
-			}
 			else {
-				echo "<script>alert('Rol incorrecto, no te podés suscribir.');</script>";
+				echo "<script>alert('El mail ya existe.');</script>";
 			}
 		}
 	}
@@ -55,7 +58,7 @@
   </head>
 		<div class="container">
 			<h1>Register</h1>
-			<h2>Bienvenido a la suscripción de <?php echo $_SESSION["rol"][0]; ?></h2>
+			<h2>Bienvenido a la suscripción de ORO</h2>
 	
 			<form action="" method="post">
 				<input type="text" placeholder="Nombre" name="nombre">

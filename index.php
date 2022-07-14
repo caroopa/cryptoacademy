@@ -1,3 +1,5 @@
+<?php include("config.php"); ?>
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +11,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="fontello.css" />
   </head>
   <body>
     <a href="https://api.whatsapp.com/send?phone=5491131900751" class="btn-wsp" target="_blank">
@@ -19,10 +20,10 @@
     <nav>
       <img src="img/logo.png" alt="" class="logo1" />
       <ul class="container-items">
-        <li class="item"><a>Nosotros</a></li>
-        <li class="item"><a>Profesores</a></li>
-        <li class="item"><a>Servicios</a></li>
-        <button class="vivo item"><a class="vivo-link">VIVO</a></button>
+        <li class="item"><a href="#nosotros">Nosotros</a></li>
+        <li class="item"><a href="#servicios">Servicios</a></li>
+        <button class="vivo item"><a class="vivo-link" href="https://www.twitch.tv/cryptoacademygym">VIVO</a></button>
+        <button class="login item"><a href="login.php" class="vivo-link">Log In</a></button>
       </ul>
       <div class="btn__container">
         <i class="fa-solid fa-bars barra"></i>
@@ -58,7 +59,7 @@
       </div>
     </section>
 
-    <section id="profes">
+    <!-- <section id="profes">
       <h1>Profesores</h1>
       <div class="container_profes">
         <div class="card_profe">
@@ -83,7 +84,7 @@
           <p class="nombre">Juan Pérez</p>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="servicios">
       <h1>Nuestros Servicios</h1>
@@ -100,15 +101,15 @@
                 <p><i class="fa fa-check check"></i>10 días FREE</p>
                 <p><i class="fa fa-check check"></i>Análisis diario</p>
                 <p><i class="fa fa-check check"></i>Bibliografía y manuales</p>
+                <p><i class="fa fa-check check"></i>Consultas lunes a viernes</p>
                 <p><del>Señales</del></p>
                 <p><del>Trading en vivo</del></p>
                 <p><del>Clases grabadas</del></p>
-                <p><del>Soporte L a V</del></p>
-                <p><del>Soporte discord</del></p>
+                <p><del>Call de discord</del></p>
                 <p><del>Cursos presenciales</del></p>
                 <p><del>Clases semanales</del></p>
               </div>
-              <button><a href="register.html">Suscribirse</a></button>
+              <button><a href="registerFree.php">Suscribirse</a></button>
             </div>
           <!-- END Col one -->
 
@@ -124,15 +125,17 @@
                 <p><i class="fa fa-check check"></i>10 días FREE</p>
                 <p><i class="fa fa-check check"></i>Análisis diario</p>
                 <p><i class="fa fa-check check"></i>Bibliografía y manuales</p>
+                <p><i class="fa fa-check check"></i>Consultas lunes a viernes</p>
                 <p><i class="fa fa-check check"></i>Señales</p>
                 <p><i class="fa fa-check check"></i>Trading en vivo</p>
                 <p><i class="fa fa-check check"></i>Clases grabadas</p>
-                <p><del>Soporte L a V</del></p>
-                <p><del>Soporte discord</del></p>
+                <p><del>Call de discord</del></p>
                 <p><del>Cursos presenciales</del></p>
                 <p><del>Clases semanales</del></p>
               </div>
-              <button><a href="pagarPlata.html">Suscribirse</a></button>
+              <form action="pagarPlata.php" method="post">
+                <button name="btn" value="plata">Suscribirse</button>
+              </form>
             </div>
           <!-- END Col two -->
 
@@ -148,19 +151,21 @@
                 <p><i class="fa fa-check check"></i>10 días FREE</p>
                 <p><i class="fa fa-check check"></i>Análisis diario</p>
                 <p><i class="fa fa-check check"></i>Bibliografía y manuales</p>
+                <p><i class="fa fa-check check"></i>Consultas lunes a viernes</p>
                 <p><i class="fa fa-check check"></i>Señales</p>
                 <p><i class="fa fa-check check"></i>Trading en vivo</p>
                 <p><i class="fa fa-check check"></i>Clases grabadas</p>
-                <p><i class="fa fa-check check"></i>Soporte L a V</p>
-                <p><i class="fa fa-check check"></i>Soporte discord</p>
+                <p><i class="fa fa-check check"></i>Call de discord</p>
                 <p><i class="fa fa-check check"></i>Cursos presenciales</p>
                 <p><i class="fa fa-check check"></i>Clases semanales</p>
               </div>
-              <button><a href="pagarOro.html">Suscribirse</a></button>
-            </div
+              <form action="pagarOro.php" method="post">
+                <button name="btn" value="oro">Suscribirse</button>
+              </form>
+          </div>
         </div>
     </section>
-
+    
     <footer id="contacto">
       <img src="img/logo.png" alt="Logo" class="logo">
         <div class="redessociales__container">
@@ -168,13 +173,14 @@
           <div class="redes-sociales">
             <p><a href="#"><i class="fa-brands fa-instagram icon"></i></a></p>
             <p><a href="#"><i class="fa-brands fa-facebook icon"></i></a></p>
-            <p><a href="#"><i class="fa-brands fa-twitch icon"></i></a></p>
+            <p><a href=""><i class="fa-brands fa-twitch icon"></i></a></p>
             <p><a href="#"><i class="fa-brands fa-tiktok icon"></i></a></p>
+            <p><a href="https://www.twitch.tv/cryptoacademygym"><i class="fa-brands fa-discord icon"></i></a></p>
           </div>
         </div>
       </div>
     </footer>
-  
+
     <script>
       const menu = document.querySelector('.btn__container');
       const item = document.querySelectorAll('.item');

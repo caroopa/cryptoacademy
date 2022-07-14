@@ -7,7 +7,7 @@
     <title>Pagar</title>
 
     <link rel="stylesheet" href="css/style_pagar.css" />
-    <script src="https://www.paypal.com/sdk/js?client-id=AQMkhkZzjANZLkN018fnmoijv3_GphRm4ScQ85KTCFT3sfMWRW6j6o5FZkVC_jT14pdVRD-j_weY-P9K"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AVvIrgTKDHTgZxR20L5GV3GOJ1fzJCHLxFPazzRQB_xJaDYw7ZgmKpEVnhGHRknjbMpCvX1up9ez46d3"></script>
   </head>
 
   <body>
@@ -32,7 +32,7 @@
               purchase_units: [
                 {
                   amount: {
-                    value: 50,
+                    value: 0.5,
                   },
                 },
               ],
@@ -42,9 +42,7 @@
             actions.order.capture().then(function (detalles) {
               console.log(detalles);
 
-              // window.location.href = "register.php";
-
-              let url = "completado.php";
+              let url = "pagadoOro.php";
               return fetch(url, {
                 method: "post",
                 headers: {
@@ -54,7 +52,7 @@
                   detalles: detalles,
                 }),
               }).then(function (response) {
-                window.location.href = "register.php";
+                window.location.href = "registerOro.php";
               });
             });
           },
@@ -67,3 +65,4 @@
     </script>
   </body>
 </html>
+

@@ -33,8 +33,22 @@
             });
           },
           onApprove: function(data, actions) {
-            alert(data.subscriptionID); // You can add optional success message for the subscriber here
-            window.location.href = "registerPlata.php";
+            actions.order.capture().then(function (detalles) {
+              console.log(detalles);
+
+              let url = "pagadoPlata.php";
+              return fetch(url, {
+                method: "post",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify({
+                  detalles: detalles,
+                }),
+              }).then(function (response) {
+                window.location.href = "registerPlata.php";
+              });
+            });
           }
       }).render('#paypal-button-container-P-2BB32069P4051413JMLHV4EA'); // Renders the PayPal button
   </script>  

@@ -4,6 +4,8 @@
 	if(isset($_GET["cerrar_sesion"])) {
 		session_unset();
 		session_destroy();
+		echo "<script>window.location.href='login.php';</script>";
+		die();
 	}
 
 	// if(isset($_SESSION["rool"])) {
@@ -34,11 +36,13 @@
 		$sesion = $sentenciaSQL -> fetch(PDO::FETCH_NUM);
 
 		if($sesion) {
-			$rol = $sesion[3];
-			$_SESSION["rool"] = $rol;
+			$_SESSION["sesion"] = $sesion;
+			// $_SESSION["rool"] = $rol;
+			// $_SESSION["nombre"] = $sesion[1];
+			// $nombre = $sesion[0];
 
-			if(isset($_SESSION["rool"])) {
-				switch($_SESSION["rool"]) {
+			if(isset($_SESSION["sesion"])) {
+				switch($_SESSION["sesion"][3]) {
 					case "free":
 						echo "<script>window.location.href='headerFree.php';</script>";
 						die();

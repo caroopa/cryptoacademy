@@ -53,6 +53,7 @@
 			<form action="registerFree.php" method="post">
 				<input type="text" placeholder="Nombre" name="nombre">
 				<input type="email" placeholder="Mail" name="mail">
+				<!-- <input type="text" placeholder="Usuario Discord" name="discord"> -->
 				<input type="password" placeholder="Contraseña" name="contra">
 				<input type="password" placeholder="Confirmar contraseña">
 				<button type="submit" name="registrar">Registrarse</button>

@@ -22,7 +22,7 @@
       <ul class="container-items">
         <li class="item"><a href="#nosotros">Nosotros</a></li>
         <li class="item"><a href="#servicios">Servicios</a></li>
-        <button class="vivo item"><a class="vivo-link" href="https://www.twitch.tv/cryptoacademygym">VIVO</a></button>
+        <!-- <button class="vivo item"><a class="vivo-link" href="https://www.twitch.tv/cryptoacademygym">VIVO</a></button> -->
         <button class="login item"><a href="login.php" class="vivo-link">Log In</a></button>
       </ul>
       <div class="btn__container">
@@ -97,16 +97,16 @@
               <div class="price">
                 <h4>FREE</h4>
               </div>
+              <h2 class="tituloo">mensual</h2>
               <div class="option">
                 <p><i class="fa fa-check check"></i>10 días FREE</p>
                 <p><i class="fa fa-check check"></i>Análisis diario</p>
                 <p><i class="fa fa-check check"></i>Bibliografía y manuales</p>
                 <p><i class="fa fa-check check"></i>Consultas lunes a viernes</p>
                 <p><del>Señales</del></p>
-                <p><del>Trading en vivo</del></p>
                 <p><del>Clases grabadas</del></p>
                 <p><del>Call de discord</del></p>
-                <p><del>Cursos presenciales</del></p>
+                <p><del>Trading en vivo</del></p>
                 <p><del>Clases semanales</del></p>
               </div>
               <button><a href="registerFree.php">Suscribirse</a></button>
@@ -121,16 +121,16 @@
               <div class="price">
                 <h4><span>U$D</span>30</h4>
               </div>
+              <h2 class="tituloo">mensual</h2>
               <div class="option">
                 <p><i class="fa fa-check check"></i>10 días FREE</p>
                 <p><i class="fa fa-check check"></i>Análisis diario</p>
                 <p><i class="fa fa-check check"></i>Bibliografía y manuales</p>
                 <p><i class="fa fa-check check"></i>Consultas lunes a viernes</p>
                 <p><i class="fa fa-check check"></i>Señales</p>
-                <p><i class="fa fa-check check"></i>Trading en vivo</p>
                 <p><i class="fa fa-check check"></i>Clases grabadas</p>
                 <p><del>Call de discord</del></p>
-                <p><del>Cursos presenciales</del></p>
+                <p><del>Trading en vivo</del></p>
                 <p><del>Clases semanales</del></p>
               </div>
               <form action="pagarPlata.php" method="post">
@@ -147,16 +147,16 @@
               <div class="price">
                 <h4><span>U$D</span>50</h4>
               </div>
+              <h2 class="tituloo">mensual</h2>
               <div class="option">
                 <p><i class="fa fa-check check"></i>10 días FREE</p>
                 <p><i class="fa fa-check check"></i>Análisis diario</p>
                 <p><i class="fa fa-check check"></i>Bibliografía y manuales</p>
                 <p><i class="fa fa-check check"></i>Consultas lunes a viernes</p>
                 <p><i class="fa fa-check check"></i>Señales</p>
-                <p><i class="fa fa-check check"></i>Trading en vivo</p>
                 <p><i class="fa fa-check check"></i>Clases grabadas</p>
                 <p><i class="fa fa-check check"></i>Call de discord</p>
-                <p><i class="fa fa-check check"></i>Cursos presenciales</p>
+                <p><i class="fa fa-check check"></i>Trading en vivo</p>
                 <p><i class="fa fa-check check"></i>Clases semanales</p>
               </div>
               <form action="pagarOro.php" method="post">

@@ -109,6 +109,7 @@ li {
 
 .login {
   width: 120px;
+  height: 50px;
   border-radius: 50px;
   font-family: "Roboto", sans-serif !important;
   border: 2px solid var(--color-terciario);
@@ -178,7 +179,7 @@ header {
 
 .titulos {
   position: absolute;
-  padding: 10rem 0;
+  padding: 6rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -289,7 +290,7 @@ video {
   }
 }
 
-/* ***********PROFES*********** */
+/* ***********PROFES***********
 
 #profes {
   background-image: url(../img/grafico.png);
@@ -334,7 +335,7 @@ video {
   font-style: oblique;
   margin-top: 1rem;
   align-self: flex-start;
-}
+} */
 
 /* ***********SERVICIOS*********** */
 
@@ -413,6 +414,12 @@ video {
   font-size: 28px;
 }
 
+.tituloo {
+  color: white;
+  padding: 0 0 2rem 0;
+  text-transform: uppercase;
+}
+
 .price,
 .option {
   position: relative;
@@ -420,9 +427,10 @@ video {
 
 .price h4 {
   margin: 0;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
   color: #fff;
   font-size: 60px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .option p {
@@ -506,5 +514,56 @@ footer {
   .footer__container {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* ***********SUSCRIPCIONES*********** */
+
+#suscripciones {
+  background-color: var(--color-primario);
+  padding: 5rem 13rem;
+  color: var(--color-terciario);
+}
+
+#suscripciones h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--color-terciario);
+  margin-bottom: 3rem;
+}
+
+h3 {
+  color: var(--color-secundario);
+}
+
+.texto p {
+  text-align: justify;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.trading1 {
+  width: 500px;
+  height: 350px;
+  margin: 2rem;
+  float: right;
+}
+
+.trading2 {
+  width: 500px;
+  height: 350px;
+  margin: 0 2rem 2rem 0;
+  float: left;
+}
+
+@media screen and (max-width: 1400px) {
+  #suscripciones {
+    padding: 5rem 10rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  #suscripciones {
+    padding: 5rem 3rem;
   }
 }
